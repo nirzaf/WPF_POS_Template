@@ -1,0 +1,166 @@
+﻿<Window x:Class="PointOfSale.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PointOfSale"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="POS" MinHeight="600" MinWidth="1080" WindowStartupLocation="CenterScreen" WindowState="Maximized" FontFamily="Roboto">
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="250"/>
+      <ColumnDefinition Width="2*"/>
+      <ColumnDefinition Width="1.5*"/>
+    </Grid.ColumnDefinitions>
+    
+    <StackPanel Background="#FF363636">
+      <Grid Height="150" Background="Gray"/>
+      <ListView>
+        <ListViewItem>
+          <StackPanel Orientation="Horizontal">
+            <materialDesign:PackIcon Kind="ViewDashboard" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Text="Dashboard" VerticalAlignment="Center" Margin="5"/>
+          </StackPanel>
+        </ListViewItem>
+        <ListViewItem>
+          <StackPanel Orientation="Horizontal">
+            <materialDesign:PackIcon Kind="BoxVariant" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Text="Products" VerticalAlignment="Center" Margin="5"/>
+          </StackPanel>
+        </ListViewItem>
+        <ListViewItem RenderTransformOrigin="0.5,0.5">
+          <StackPanel Orientation="Horizontal">
+            <materialDesign:PackIcon Kind="User" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Text="Users" VerticalAlignment="Center" Margin="5"/>
+          </StackPanel>
+        </ListViewItem>
+        <ListViewItem>
+          <StackPanel Orientation="Horizontal">
+            <materialDesign:PackIcon Kind="Settings" VerticalAlignment="Center" Margin="5"/>
+            <TextBlock Text="Settings" VerticalAlignment="Center" Margin="5"/>
+          </StackPanel>
+        </ListViewItem>
+      </ListView>
+    </StackPanel>
+
+    <Grid Grid.Column="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="0.7*"/>
+        <RowDefinition Height="3*"/>
+        <RowDefinition Height="1*"/>
+      </Grid.RowDefinitions>
+
+      <StackPanel Margin="10">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Foreground="Gray" Text="USER: " FontWeight="Bold"/>
+          <TextBlock Text="ADMIN" Foreground="LightGray" Margin="5 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Foreground="Gray" Text="CASH DRAWER ALLOCATED: " FontWeight="Bold"/>
+          <TextBlock Text="2019-06-10 06:30AM" Foreground="LightGray" Margin="5 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Foreground="Gray" Text="CASH DRAWER ID: " FontWeight="Bold"/>
+          <TextBlock Text="5" Foreground="LightGray" Margin="5 0"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+          <TextBlock Foreground="Gray" Text="CUSTOMER: " FontWeight="Bold"/>
+          <TextBlock Text="NO CUSTOMER SELECTED" Foreground="LightGray" Margin="5 0"/>
+        </StackPanel>
+      </StackPanel>
+
+      <Border Grid.Row="1" BorderBrush="LightGray" BorderThickness="1" Margin="10" CornerRadius="5">
+        <ListView Margin="0 0 4 0" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+          <ListViewItem>
+            <Grid Width="400">
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="3*"/>
+              </Grid.ColumnDefinitions>
+              <Image Grid.Column="0" Source="Assets/coke.png" Margin="5"/>
+              <StackPanel Grid.Column="1" VerticalAlignment="Center" Margin="5">
+                <TextBlock Text="Coke 500ml" Foreground="Gray" FontSize="14"/>
+                <TextBlock Text="99124667764512" Foreground="Gray" FontSize="10"/>
+              </StackPanel>
+              <TextBlock Grid.Column="2" Text="$ 5.00" Foreground="Gray" VerticalAlignment="Center" Margin="5"/>
+              <TextBlock Grid.Column="3" Text="3" Foreground="Gray" VerticalAlignment="Center" Margin="5"/>
+              <TextBlock Grid.Column="4" Text="$ 15.00" Foreground="Gray" VerticalAlignment="Center" Margin="5"/>
+            </Grid>
+          </ListViewItem>
+        </ListView>
+      </Border>
+
+      <Grid Grid.Row="2">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="1*"/>
+          <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="5*"/>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="2*"/>
+          <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Grid.Row="0" Grid.Column="0" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Barcode" Margin="10"/>
+        <TextBox Grid.Row="0" Grid.Column="1" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Qty" Margin="10"/>
+        <TextBox Grid.Row="0" Grid.Column="2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Discount" Margin="10"/>
+        <TextBox Grid.Row="0" Grid.Column="3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Addition" Margin="10"/>
+        <Button Grid.Column="1" Content="PAY" Grid.Row="1" Grid.ColumnSpan="3" Margin="10" Width="Auto" Height="Auto"/>
+      </Grid>
+
+    </Grid>
+    <Grid Grid.Column="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="1.5*"/>
+        <RowDefinition Height="3*"/>
+        <RowDefinition Height="3*"/>
+      </Grid.RowDefinitions>
+      <materialDesign:ColorZone Margin="5">
+        <TextBlock Text="$ 15.00" FontSize="40" HorizontalAlignment="Center" Margin="20"/>
+      </materialDesign:ColorZone>
+      <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Grid.Row="1" Margin="5">
+        <Grid>
+          <Image Source="Assets/3263.jpg" Margin="10"/>
+        </Grid>
+      </Border>
+      <Grid Grid.Row="2" Margin="10">
+        <Grid.RowDefinitions>
+          <RowDefinition Height="1*"/>
+          <RowDefinition Height="1*"/>
+          <RowDefinition Height="1*"/>
+          <RowDefinition Height="1*"/>
+          <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="1*"/>
+          <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" Width="Auto" Height="Auto" Content="7" Margin="5"/>
+        <Button Grid.Column="1" Grid.Row="0" Width="Auto" Height="Auto" Content="8" Margin="5"/>
+        <Button Grid.Column="2" Grid.Row="0" Width="Auto" Height="Auto" Content="9" Margin="5"/>
+
+        <Button Grid.Column="0" Grid.Row="1" Width="Auto" Height="Auto" Content="4" Margin="5"/>
+        <Button Grid.Column="1" Grid.Row="1" Width="Auto" Height="Auto" Content="5" Margin="5"/>
+        <Button Grid.Column="2" Grid.Row="1" Width="Auto" Height="Auto" Content="6" Margin="5"/>
+
+        <Button Grid.Column="0" Grid.Row="2" Width="Auto" Height="Auto" Content="1" Margin="5"/>
+        <Button Grid.Column="1" Grid.Row="2" Width="Auto" Height="Auto" Content="2" Margin="5"/>
+        <Button Grid.Column="2" Grid.Row="2" Width="Auto" Height="Auto" Content="3" Margin="5"/>
+
+        <Button Grid.Column="0" Grid.Row="3" Width="Auto" Height="Auto" Content="CLEAR" Margin="5"/>
+        <Button Grid.Column="1" Grid.Row="3" Width="Auto" Height="Auto" Content="0" Margin="5"/>
+        <Button Grid.Column="2" Grid.Row="3" Width="Auto" Height="Auto" Content="." Margin="5"/>
+
+        <Button Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="4" Width="Auto" Height="Auto" Content="ENTER" Margin="5"/>
+        <Button Grid.Column="2" Grid.Row="4" Width="Auto" Height="Auto" Content="CANCEL" Margin="5" Style="{StaticResource MaterialDesignFlatButton}"/>
+      </Grid>
+    </Grid>
+  </Grid>
+</Window>

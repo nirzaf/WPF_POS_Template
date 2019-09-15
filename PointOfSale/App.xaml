@@ -1,0 +1,24 @@
+﻿<Application x:Class="PointOfSale.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PointOfSale"
+             StartupUri="MainWindow.xaml">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+      <!--PRIMARY-->
+      <SolidColorBrush x:Key="PrimaryHueLightBrush" Color="#FF999999"/>
+      <SolidColorBrush x:Key="PrimaryHueLightForegroundBrush" Color="#333333"/>
+      <SolidColorBrush x:Key="PrimaryHueMidBrush" Color="#FF808080"/>
+      <SolidColorBrush x:Key="PrimaryHueMidForegroundBrush" Color="#FFFFFF"/>
+      <SolidColorBrush x:Key="PrimaryHueDarkBrush" Color="#FF4D4D4D"/>
+      <SolidColorBrush x:Key="PrimaryHueDarkForegroundBrush" Color="#FFFFFF"/>
+      <!--ACCENT-->
+      <SolidColorBrush x:Key="SecondaryAccentBrush" Color="#689f38"/>
+      <SolidColorBrush x:Key="SecondaryAccentForegroundBrush" Color="#FFFFFF"/>
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>
